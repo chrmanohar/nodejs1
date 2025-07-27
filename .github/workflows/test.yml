@@ -1,7 +1,7 @@
 name: Test Project
-on: push 
+on: [push,workflow_dispatch] 
 jobs:
-  test: 
+  build: 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout File
@@ -15,7 +15,7 @@ jobs:
       - name: npm test
         run: npm run test
   deploy:
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout File
