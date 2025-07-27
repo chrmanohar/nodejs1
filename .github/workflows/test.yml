@@ -11,6 +11,6 @@ jobs:
         with:
            node-version: 18
       - name: 'Resolve Project Dependencies Using Npm'
-        run: npm cli
+        run: npm ci
       - name: npm test
         run: npm run test
